@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add New Posts - berita.com</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+    </head>
 <body style="background: lightgray">
 
     <div class="container mt-5 mb-5">
@@ -32,7 +32,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">TITLE</label>
-                                <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" placeholder="Masukkan Judul Product">
+                                <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" placeholder="Inside Title of Post">
                             
                                 <!-- error message untuk title -->
                                 @error('title')
@@ -44,21 +44,19 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">CONTENT</label>
-                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" rows="5" placeholder="Masukkan Content Post">{{ old('content') }}</textarea>
+                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" rows="5" placeholder="Inside Content of Post">{{ old('content') }}</textarea>
                             
                                 <!-- error message untuk content -->
                                 @error('content')
-                                    <div class="alert alert-danger mt-2">r
+                                    <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
                                 @enderror
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-6">
                                     <div class="form-group mb-3">
                                         <label class="font-weight-bold">REPORTER</label>
-                                        <input type="string" class="form-control @error('reporter') is-invalid @enderror" name="reporter" value="{{ old('reporter') }}" placeholder="Masukkan Nama Reporter">
+                                        <input type="text" class="form-control @error('reporter') is-invalid @enderror" name="reporter" value="{{ old('reporter') }}" placeholder="Inside Reporter of Post">
                                     
                                         <!-- error message untuk reporter -->
                                         @error('reporter')
@@ -67,11 +65,10 @@
                                             </div>
                                         @enderror
                                     </div>
-                                </div>
-                                <div class="col-md-6">
+
                                     <div class="form-group mb-3">
                                         <label class="font-weight-bold">SOURCE</label>
-                                        <input type="string" class="form-control @error('source') is-invalid @enderror" name="source" value="{{ old('source') }}" placeholder="Masukkan Nama Source">
+                                        <input type="text" class="form-control @error('source') is-invalid @enderror" name="source" value="{{ old('source') }}" placeholder="Inside Source of Post">
                                     
                                         <!-- error message untuk source -->
                                         @error('source')
@@ -80,8 +77,6 @@
                                             </div>
                                         @enderror
                                     </div>
-                                </div>
-                            </div>
 
                             <button type="submit" class="btn btn-md btn-primary me-3">SAVE</button>
                             <button type="reset" class="btn btn-md btn-warning">RESET</button>
