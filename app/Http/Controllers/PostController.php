@@ -45,8 +45,8 @@ class PostController extends Controller
             'image'     => $image->hashName(),
             'title'     => $request->title,
             'content'   => $request->content,
-            'reporter' =>$request->reporter,
-            'source' =>$request->source,
+            'reporter'  => $request->reporter,
+            'source'    => $request->source,
         ]);
 
         //redirect to index
