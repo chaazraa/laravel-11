@@ -44,7 +44,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">CONTENT</label>
-                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" rows="5" placeholder="Masukkan Description Post">{{ old('content') }}</textarea>
+                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" rows="5" placeholder="Masukkan Content Post">{{ old('content') }}</textarea>
                             
                                 <!-- error message untuk content -->
                                 @error('content')
