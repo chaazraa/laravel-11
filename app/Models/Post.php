@@ -19,6 +19,6 @@ class Post extends Model
         'title',
         'content',
         'reporter',
-        'source',
+        'source'
     ];
 }

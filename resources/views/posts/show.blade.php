@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Show Posts - berita.com</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+    </head>
 <body style="background: lightgray">
 
     <div class="container mt-5 mb-5">
@@ -14,21 +14,22 @@
             <div class="col-md-4">
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <img src="{{ asset('/storage/posts/'.$post->image) }}" class="rounded" style="width: 100%">
+                        <img src="{{ asset('/storage/post/'.$post->image) }}" class="rounded" style="width: 100%">
                     </div>
                 </div>
             </div>
             <div class="col-md-8">
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <h3>{{ $post->title }}</h3>
+                        <h3>Title : {{ $post->title }}</h3>
                         <hr/>
-                        <p>{{ "Rp " . number_format($post->reporter,2,',','.') }}</p>
                         <code>
-                            <p>{!! $post->content !!}</p>
+                            <p>Content : {!! $post->content !!}</p>
                         </code>
                         <hr/>
-                        <p>Stock : {{ $post->source }}</p>
+                        <p>Reporter : {{ $post->reporter }}</p>
+                        <hr/>
+                        <p>Source : {{ $post->source }}</p>
                     </div>
                 </div>
             </div>
