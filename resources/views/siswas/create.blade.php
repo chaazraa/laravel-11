@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit Posts - berita.com</title>
+    <title>Add Data Siswa - siswa.com</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+    </head>
 <body style="background: lightgray">
 
     <div class="container mt-5 mb-5">
@@ -14,10 +14,9 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <form action="{{ route('posts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('siswas.store') }}" method="POST" enctype="multipart/form-data">
                         
                             @csrf
-                            @method('PUT')
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">IMAGE</label>
@@ -32,11 +31,11 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <label class="font-weight-bold">TITLE</label>
-                                <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $post->title) }}" placeholder="Inside Title of Post">
+                                <label class="font-weight-bold">NAME</label>
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Inside Name of Siswa">
                             
                                 <!-- error message untuk title -->
-                                @error('title')
+                                @error('name')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -44,11 +43,11 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <label class="font-weight-bold">CONTENT</label>
-                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" rows="5" placeholder="Inside Content of Post">{{ old('content', $post->content) }}</textarea>
+                                <label class="font-weight-bold">ADDRESS</label>
+                                <textarea class="form-control @error('address') is-invalid @enderror" name="address" rows="5" placeholder="Inside Address of Siswa">{{ old('content') }}</textarea>
                             
                                 <!-- error message untuk content -->
-                                @error('content')
+                                @error('address')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
@@ -56,11 +55,11 @@
                             </div>
 
                                     <div class="form-group mb-3">
-                                        <label class="font-weight-bold">REPORTER</label>
-                                        <input type="text" class="form-control @error('reporter') is-invalid @enderror" name="reporter" value="{{ old('reporter', $post->reporter) }}" placeholder="Inside Reporter of Post">
+                                        <label class="font-weight-bold">PHONE</label>
+                                        <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" placeholder="Inside Phone of Siswa">
                                     
                                         <!-- error message untuk reporter -->
-                                        @error('reporter')
+                                        @error('phone')
                                             <div class="alert alert-danger mt-2">
                                                 {{ $message }}
                                             </div>
@@ -68,18 +67,30 @@
                                     </div>
 
                                     <div class="form-group mb-3">
-                                        <label class="font-weight-bold">SOURCE</label>
-                                        <input type="text" class="form-control @error('source') is-invalid @enderror" name="source" value="{{ old('source', $post->source) }}" placeholder="Inside Source of Post">
+                                        <label class="font-weight-bold">EMAIL</label>
+                                        <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Inside Email of Siswa">
                                     
                                         <!-- error message untuk source -->
-                                        @error('source')
+                                        @error('email')
                                             <div class="alert alert-danger mt-2">
                                                 {{ $message }}
                                             </div>
                                         @enderror
                                     </div>
 
-                            <button type="submit" class="btn btn-md btn-primary me-3">UPDATE</button>
+                                    <div class="form-group mb-3">
+                                        <label class="font-weight-bold">GENDER</label>
+                                        <input type="text" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender') }}" placeholder="Inside Gender of Siswa">
+                                    
+                                        <!-- error message untuk source -->
+                                        @error('gender')
+                                            <div class="alert alert-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+
+                            <button type="submit" class="btn btn-md btn-primary me-3">SAVE</button>
                             <button type="reset" class="btn btn-md btn-warning">RESET</button>
 
                         </form> 
@@ -92,7 +103,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace( 'content' );
+        CKEDITOR.replace( 'address' );
     </script>
 </body>
 </html>
