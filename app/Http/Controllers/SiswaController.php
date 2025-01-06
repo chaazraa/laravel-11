@@ -58,10 +58,10 @@ class SiswaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Siswa $siswa): View
+    public function show(string $id): View
     {
         //get siswa by id
-        $siswa = Siswa::findorFail($id);
+        $siswa = Siswa::findOrFail($id);
 
         //render view with siswa
         return view('siswas.show', compact('siswa'));
@@ -70,7 +70,7 @@ class SiswaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Siswa $siswa): View
+    public function edit(string $id): View
     {
         //get siswa by id
         $siswa = Siswa::findorFail($id);
@@ -82,7 +82,7 @@ class SiswaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSiswaRequest $request, Siswa $siswa): RedirectResponse
+    public function update(UpdateSiswaRequest $request, $id): RedirectResponse
     {
         
         //get siswa by id
@@ -96,7 +96,7 @@ class SiswaController extends Controller
             $image->storeAs('public/siswa', $image->hashName());
 
             //delete old image
-            Storage::disk('local')->delete('public/siswa/' . $siswa->image);
+            Storage::delete('public/siswa/' . $siswa->image);
 
             //update siswa with new image
             $siswa->update([
@@ -120,24 +120,24 @@ class SiswaController extends Controller
         }
         
         //redirect to index
-        return redirect()->route('siswa.index')->with(['success' => 'Data Berhasil Diupdate!']);
+        return redirect()->route('siswas.index')->with(['success' => 'Data Berhasil Diupdate!']);
     }
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Siswa $siswa): RedirectResponse
+    public function destroy($id): RedirectResponse
     {
         //get siswa by id
         $siswa = Siswa::findorFail($id);
 
         //delete image
-        Storage::disk('local')->delete('public/siswa/' . $siswa->image);
+        Storage::delete('public/siswa/' . $siswa->image);
 
         //delete siswa
         $siswa->delete();
 
         //redirect to index
-        return redirect()->route('siswa.index')->with(['success' => 'Data Berhasil Dihapus!']);
+        return redirect()->route('siswas.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
     
 } 

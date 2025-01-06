@@ -42,6 +42,7 @@
                                         <td>{{ $siswa->gender }}</td>
                                         <td>{{ $siswa->phone }}</td>
                                         <td>{{ $siswa->email }}</td>
+                                        <td>{{ $siswa->address }}</td>
                                         <td class="text-center">
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('siswas.destroy', $siswa->id) }}" method="POST">
                                                 <a href="{{ route('siswas.show', $siswa->id) }}" class="btn btn-sm btn-dark">SHOW</a>

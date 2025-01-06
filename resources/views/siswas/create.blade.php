@@ -42,17 +42,18 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group mb-3">
-                                <label class="font-weight-bold">ADDRESS</label>
-                                <textarea class="form-control @error('address') is-invalid @enderror" name="address" rows="5" placeholder="Inside Address of Siswa">{{ old('content') }}</textarea>
                             
-                                <!-- error message untuk content -->
-                                @error('address')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
+                            <div class="form-group mb-3">
+                                        <label class="font-weight-bold">GENDER</label>
+                                        <input type="text" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender') }}" placeholder="Inside Gender of Siswa">
+                                    
+                                        <!-- error message untuk source -->
+                                        @error('gender')
+                                            <div class="alert alert-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
-                                @enderror
-                            </div>
 
                                     <div class="form-group mb-3">
                                         <label class="font-weight-bold">PHONE</label>
@@ -79,16 +80,16 @@
                                     </div>
 
                                     <div class="form-group mb-3">
-                                        <label class="font-weight-bold">GENDER</label>
-                                        <input type="text" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender') }}" placeholder="Inside Gender of Siswa">
-                                    
-                                        <!-- error message untuk source -->
-                                        @error('gender')
-                                            <div class="alert alert-danger mt-2">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
+                                <label class="font-weight-bold">ADDRESS</label>
+                                <textarea class="form-control @error('address') is-invalid @enderror" name="address" rows="5" placeholder="Inside Address of Siswa">{{ old('content') }}</textarea>
+                            
+                                <!-- error message untuk content -->
+                                @error('address')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
                                     </div>
+                                @enderror
+                            </div>
 
                             <button type="submit" class="btn btn-md btn-primary me-3">SAVE</button>
                             <button type="reset" class="btn btn-md btn-warning">RESET</button>

@@ -21,17 +21,16 @@
             <div class="col-md-8">
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <h3>Name : {{ $post->name }}</h3>
+                        <h3>Name : {{ $siswa->name }}</h3>
                         <hr/>
-                        <code>
-                            <p>Gender : {!! $post->gender !!}</p>
-                        </code>
+                        <p>Gender : {!! $siswa->gender !!}</p>
                         <hr/>
-                        <p>Phone: {{ $post->phone }}</p>
+                        <p>Phone : {{ $siswa->phone }}</p>
                         <hr/>
-                        <p>Email : {{ $post->email }}</p>
+                        <p>Email : {{ $siswa->email }}</p>
                         <hr/>
-                        <p>Address : {{ $post->address}}</p>
+                        <p>Address : {{ $siswa->address }}</p>
+                        <hr/>
                     </div>
                 </div>
             </div>
