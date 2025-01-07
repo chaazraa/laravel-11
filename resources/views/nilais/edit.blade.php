@@ -21,7 +21,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">MATEMATIKA</label>
-                                <input type="number" class="form-control @error('matematika') is-invalid @enderror" name="matematika">
+                                <input type="number" class="form-control @error('matematika') is-invalid @enderror" name="matematika" value="{{ old('matematika', $nilai->matematika) }}" placeholder="Masukkan Nilai">
                             
                                 <!-- error message untuk matematika -->
                                 @error('matematika')
@@ -33,7 +33,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">FISIKA</label>
-                                <input type="number" class="form-control @error('fisika') is-invalid @enderror" name="fisika">
+                                <input type="number" class="form-control @error('fisika') is-invalid @enderror" name="fisika" value="{{ old('fisika', $nilai->fisika) }}" placeholder="Masukkan Nilai">
                             
                                 <!-- error message untuk fisika -->
                                 @error('fisika')
@@ -45,7 +45,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">BIOLOGI</label>
-                                <input type="number" class="form-control @error('biologi') is-invalid @enderror" name="biologi">
+                                <input type="number" class="form-control @error('biologi') is-invalid @enderror" name="biologi" value="{{ old('biologi', $nilai->biologi) }}" placeholder="Masukkan Nilai">
                             
                                 <!-- error message untuk biologi -->
                                 @error('biologi')
@@ -57,7 +57,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">KIMIA</label>
-                                <input type="number" class="form-control @error('kimia') is-invalid @enderror" name="kimia">
+                                <input type="number" class="form-control @error('kimia') is-invalid @enderror" name="kimia" value="{{ old('kimia', $nilai->kimia) }}" placeholder="Masukkan Nilai">
                             
                                 <!-- error message untuk kimia -->
                                 @error('kimia')
@@ -69,7 +69,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">AKUTANSI</label>
-                                <input type="number" class="form-control @error('akutansi') is-invalid @enderror" name="akutansi">
+                                <input type="number" class="form-control @error('akutansi') is-invalid @enderror" name="akutansi" value="{{ old('akutansi', $nilai->akutansi) }}" placeholder="Masukkan Nilai">
                             
                                 <!-- error message untuk akutansi -->
                                 @error('akutansi')
@@ -91,8 +91,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace( 'address' );
-    </script>
 </body>
 </html>

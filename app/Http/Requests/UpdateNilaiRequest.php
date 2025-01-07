@@ -25,7 +25,7 @@ class UpdateNilaiRequest extends FormRequest
             'matematika'    => 'required|numeric',
             'fisika'        => 'required|numeric',
             'biologi'       => 'required|numeric',
-            'fkimia'        => 'required|numeric',
+            'kimia'        => 'required|numeric',
             'akutansi'      => 'required|numeric',
         ]);
     }
