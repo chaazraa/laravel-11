@@ -21,7 +21,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">MATEMATIKA</label>
-                                <input type="file" class="form-control @error('matematika') is-invalid @enderror" name="matematika">
+                                <input type="number" class="form-control @error('matematika') is-invalid @enderror" name="matematika">
                             
                                 <!-- error message untuk matematika -->
                                 @error('matematika')
@@ -33,7 +33,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">FISIKA</label>
-                                <input type="file" class="form-control @error('fisika') is-invalid @enderror" name="fisika">
+                                <input type="number" class="form-control @error('fisika') is-invalid @enderror" name="fisika">
                             
                                 <!-- error message untuk fisika -->
                                 @error('fisika')
@@ -45,7 +45,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">BIOLOGI</label>
-                                <input type="file" class="form-control @error('biologi') is-invalid @enderror" name="biologi">
+                                <input type="number" class="form-control @error('biologi') is-invalid @enderror" name="biologi">
                             
                                 <!-- error message untuk biologi -->
                                 @error('biologi')
@@ -57,7 +57,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">KIMIA</label>
-                                <input type="file" class="form-control @error('kimia') is-invalid @enderror" name="kimia">
+                                <input type="number" class="form-control @error('kimia') is-invalid @enderror" name="kimia">
                             
                                 <!-- error message untuk kimia -->
                                 @error('kimia')
@@ -69,7 +69,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">AKUTANSI</label>
-                                <input type="file" class="form-control @error('akutansi') is-invalid @enderror" name="akutansi">
+                                <input type="number" class="form-control @error('akutansi') is-invalid @enderror" name="akutansi">
                             
                                 <!-- error message untuk akutansi -->
                                 @error('akutansi')
