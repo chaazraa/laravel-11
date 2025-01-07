@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('review');
             $table->string('phone');
-            $table->datetime('date');
             $table->timestamps();
         });
     }

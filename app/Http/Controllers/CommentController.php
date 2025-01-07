@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
-use App\Http\Requests\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class CommentController extends Controller
@@ -13,9 +13,11 @@ class CommentController extends Controller
     /**
      * Display a listing of the resource.
      */
+    
     public function index(): View
     {
         $comments = Comment::paginate(10);
+
         return view('comments.index', compact('comments'));
     }
 
@@ -41,7 +43,6 @@ class CommentController extends Controller
             'name'      => $request->name,
             'review'    => $request->review,
             'phone'     => $request->phone,
-            'date'      => $request->date,
         ]);
 
         return redirect()->route('comments.index')->with('success', 'Comment created successfully.');
@@ -83,22 +84,22 @@ class CommentController extends Controller
             
             Storage::disk('local')->delete('public/comments/' . $number->image);
 
-            $comment->update([
-                'image'     => $image->hashName(),
-                'name'      => $request->name,
-                'review'    => $request->review,
-                'phone'     => $request->phone,
-                'date'      => $request->date,
-            ]);
+        //     $comment->update([
+        //         'image'     => $image->hashName(),
+        //         'name'      => $request->name,
+        //         'review'    => $request->review,
+        //         'phone'     => $request->phone,
+        //         'date'      => $request->date,
+        //     ]);
 
-        } else {
-            $comment->update([
-                'image'     => $image->hashName(),
-                'name'      => $request->name,
-                'review'    => $request->review,
-                'phone'     => $request->phone,
-                'date'      => $request->date,
-            ]);
+        // } else {
+        //     $comment->update([
+        //         'image'     => $image->hashName(),
+        //         'name'      => $request->name,
+        //         'review'    => $request->review,
+        //         'phone'     => $request->phone,
+        //         'date'      => $request->date,
+        //     ]);
 
             return redirect()->route('comments.index')->with('success', 'Comment updated successfully.');
         }

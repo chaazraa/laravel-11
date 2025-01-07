@@ -14,7 +14,7 @@
             <div class="col-md-4">
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <img src="{{ asset('/storage/comment/'.$comment->image) }}" class="rounded" style="width: 100%">
+                        <img src="{{ asset('/storage/comments/'.$comment->image) }}" class="rounded" style="width: 100%">
                     </div>
                 </div>
             </div>
@@ -28,8 +28,6 @@
                         </code>
                         <hr/>
                         <p>Phone : {{ $comment->phone }}</p>
-                        <hr/>
-                        <p>Date : {{ $comment->date }}</p>
                     </div>
                 </div>
             </div>

@@ -27,7 +27,6 @@
                                     <th scope="col">NAME</th>
                                     <th scope="col">REVIEW</th>
                                     <th scope="col">PHONE</th>
-                                    <th scope="col">DATE</th>
                                     <th scope="col" style="width: 20%">ACTIONS</th>
                                 </tr>
                             </thead>
@@ -35,12 +34,11 @@
                                 @forelse ($comments as $comment)
                                     <tr>
                                         <td class="text-center">
-                                            <img src="{{ asset('/storage/comment/'.$comment->image) }}" class="rounded" style="width: 150px">
+                                            <img src="{{ asset('/storage/comments/'.$comment->image) }}" class="rounded" style="width: 150px">
                                         </td>
                                         <td>{{ $comment->name }}</td>
                                         <td>{{ $comment->review}}</td>
                                         <td>{{ $comment->phone }}</td>
-                                        <td>{{ $comment->date}}</td>
                                         <td class="text-center">
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('comments.destroy', $comment->id) }}" method="POST">
                                                 <a href="{{ route('comments.show', $comment->id) }}" class="btn btn-sm btn-dark">SHOW</a>

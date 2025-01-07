@@ -67,18 +67,6 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group mb-3">
-                                <label class="font-weight-bold">DATE</label>
-                                <input type="datetime" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" placeholder="Masukkan Waktu">
-                            
-                                <!-- error message untuk date -->
-                                @error('date')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
                             <button type="submit" class="btn btn-md btn-primary me-3">SAVE</button>
                             <button type="reset" class="btn btn-md btn-warning">RESET</button>
 

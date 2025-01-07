@@ -26,7 +26,6 @@ class UpdateCommentRequest extends FormRequest
             'name'      => 'required|string|max:255',
             'review'    => 'required|string|max:255',
             'phone'     => 'required|numeric',
-            'date'      => 'required|date',
         ]);
     }
 }

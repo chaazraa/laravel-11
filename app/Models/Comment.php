@@ -15,6 +15,5 @@ class Comment extends Model
         'name',
         'review',
         'phone',
-        'date',
     ]; 
 }

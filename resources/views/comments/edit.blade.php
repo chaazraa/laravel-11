@@ -33,7 +33,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">NAME</label>
-                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Masukkan Nama">
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name', $comment->name) }}" placeholder="Masukkan Nama">
                             
                                 <!-- error message untuk name -->
                                 @error('name')
@@ -45,7 +45,7 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">REVIEW</label>
-                                <textarea class="form-control @error('review') is-invalid @enderror" name="review" rows="5" placeholder="Masukkan Komentar">{{ old('review') }}</textarea>
+                                <textarea class="form-control @error('review') is-invalid @enderror" name="review" rows="5" value= "{{ old('review', $comment->review) }}" placeholder="Masukkan Komentar"></textarea>
                             
                                 <!-- error message untuk review -->
                                 @error('review')
@@ -58,22 +58,10 @@
 
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">PHONE</label>
-                                <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" placeholder="Masukkan Nomer Telepon">
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone', $comment->phone) }}" placeholder="Masukkan Nomer Telepon">
                             
                                 <!-- error message untuk phone -->
                                 @error('phone')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group mb-3">
-                                <label class="font-weight-bold">DATE</label>
-                                <input type="datetime" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" placeholder="Masukkan Waktu">
-                            
-                                <!-- error message untuk date -->
-                                @error('date')
                                     <div class="alert alert-danger mt-2">
                                         {{ $message }}
                                     </div>
