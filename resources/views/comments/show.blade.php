@@ -21,6 +21,11 @@
             <div class="col-md-8">
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
+                        <h3>{{ $post->title }}</h3>
+                        <hr/>
+                        <code>
+                            <p>{!! $post->content !!}</p>
+                        </code>
                         <h3>Name : {{ $comment->name }}</h3>
                         <hr/>
                         <code>

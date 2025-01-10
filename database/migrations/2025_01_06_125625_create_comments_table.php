@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-            $table->string('name');
-            $table->string('review');
-            $table->string('phone');
+            $table->unsignedBigInteger('post_id'); //->after('id'); // Menambahkan kolom post_id setelah kolom id
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade'); // Menambahkan foreign key
+            $table->string('content');
+            $table->string('author');
             $table->timestamps();
         });
     }

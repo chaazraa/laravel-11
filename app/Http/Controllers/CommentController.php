@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Post;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -35,17 +36,19 @@ class CommentController extends Controller
     public function store(Request $request): RedirectResponse
     {
         
-        $image = $request->file('image');
-        $image->storeAs('public/comments', $image->hashName());
-
+        // $image = $request->file('image');
+        // $image->storeAs('public/comments', $image->hashName());
         Comment::create([
-            'image'     => $image->hashName(),
-            'name'      => $request->name,
-            'review'    => $request->review,
-            'phone'     => $request->phone,
+            'post_id'   => $request->post_id,
+            'content'   => $request->content,
+            'author'    => $request->author,
+            // 'image'     => $image->hashName(),
+            // 'name'      => $request->name,
+            // 'review'    => $request->review,
+            // 'phone'     => $request->phone,
         ]);
 
-        return redirect()->route('comments.index')->with('success', 'Comment created successfully.');
+        return redirect()->route('posts.show', $request->post_id)->with('success', 'Comment created successfully.');
     }
 
     /**
